@@ -1,0 +1,72 @@
+<form (ngSubmit)="onSubmit()" #shopForm="ngForm">
+ <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                      <label class="control-label" for="name">Name</label>
+                      <input type="text" [(ngModel)]="shop.name" class="form-control" id="name" name="name" placeholder="Enter shop's name" #name="ngModel">
+					<!-- <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div> -->
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                      <label class="control-label" for="category">Category</label>
+                      <select  [(ngModel)]="shop.category" class="form-control selectpicker" id="category" name="category" #category="ngModel">
+                      	<option selected>Select category from the list</option>
+                      	<option>General store</option>
+                      	<option>Mall</option>
+                      	<option>Supermarket</option>
+                      	<option>Medical store</option>
+                      </select>
+					<!-- <div [hidden]="!category.pristine" class="alert alert-danger">Email is required</div> -->
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input  [(ngModel)]="shop.address.address"  type="text" class="form-control" id="address" name="address"  #address="ngModel">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input [(ngModel)]="shop.address.city" type="text" class="contactInput form-control" id="city" name="city" #city="ngModel">
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                    <div class="form-group">
+                        <label for="state">State</label>
+                         <input [(ngModel)]="shop.address.state" type="text" class="contactInput form-control" id="state" name="state" #state="ngModel">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="zipcode">Zip Code</label>
+                        <input [(ngModel)]="shop.address.zipcode" type="text" class="contactInput form-control" id="zipcode" name="zipcode" #zipcode="ngModel">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="ownerName">Owner's Name</label>
+                        <input [(ngModel)]="shop.ownerName" type="text" class="contactInput form-control" id="ownerName" name="ownerName" #ownerName="ngModel">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                       <button type="submit" [disabled]="!shopForm.form.valid" class="btn btn-info">Submit</button>
+                       <button routerLink="/shops" class="btn btn-info">Cancel</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+</form>

@@ -1,0 +1,37 @@
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<td colspan="4">
+				<div class="row">
+					<div class="col-sm-2 text-nowrap">
+						<label class="label">Search By</label> 
+						<select class="selectpicker" name="searchBy" id="searchBy" #searchBy>
+							<option>Name</option>
+							<option>Location</option>
+						</select>
+					</div>
+					<div class="col col-sm-3">
+						<input type="text" width="100%" name="searchKey" id="searchKey" #searchKey />
+					</div>
+					<div class="col col-sm-1">
+						<button class="btn btn-primary" (click)="search()">Search</button>
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Name</th>
+			<th scope="col">Address</th>
+			<th scope="col">Owner</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let shop of shops">
+			<td>{{ shop.id }}</td>
+			<td>{{ shop.name }}</td>
+			<td>{{ shop.address.address }}</td>
+			<td>{{ shop.ownerName }}</td>
+		</tr>
+	</tbody>
+</table>
